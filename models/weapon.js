@@ -7,3 +7,5 @@ const weaponSchema = new mongoose.Schema({
 });
 
 const Weapon = mongoose.model("Weapon", weaponSchema);// model
+
+module.exports = Weapon;

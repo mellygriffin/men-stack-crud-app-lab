@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons Inventory</title>
+</head>
+<body>
+    <h1>Welcome to the Inventory!</h1>
+    <ul>
+        <% weapons.forEach(weapon => { %>
+            <li><%= weapon.name %></li>
+        <% }); %>
+    </ul>
+
+    <a href="/weapons/new">Add New Weapon</a>
+
+</body>
+</html>
