@@ -14,12 +14,30 @@ mongoose.connection.on("connected", () => {
 });
 
 //Import Weapon model
-const Fruit = require("./models/weapon.js")
+const Weapon = require("./models/weapon.js")
 
-//GET route
+app.use(express.urlencoded({ extended: false }));
+
+//GET landing page route
 app.get("/", async (req, res) => {
     res.send("Testing!");
-})
+});
+
+//GET weapon/new route
+app.get("/weapons/new", (req, res) => {
+    res.render("weapons/new.ejs");
+});
+
+//POST weapons route
+app.post("/weapons", async (req, res) => {
+    if (req.body.isEquipped === "on") {
+        req.body.isEquipped = true;
+    } else {
+        req.body.isEquipped = false;
+    }
+    await Weapon.create(req.body);
+    res.redirect("/weapons/new");
+});
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
