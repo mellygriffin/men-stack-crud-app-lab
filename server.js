@@ -1,7 +1,17 @@
 // Starter Code
+const dotenv = require("dotenv");
+dotenv.config();//loads things from .env
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
+
+//Connect to mongoose
+mongoose.connect(process.env.MONGODB_URI);
+//log connection status on start
+mongoose.connection.on("connected", () => {
+    console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+});
 
 //GET route
 app.get("/", async (req, res) => {
