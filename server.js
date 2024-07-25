@@ -13,6 +13,9 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+//Import Weapon model
+const Fruit = require("./models/weapon.js")
+
 //GET route
 app.get("/", async (req, res) => {
     res.send("Testing!");
