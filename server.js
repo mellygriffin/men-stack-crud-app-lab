@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //GET landing page
 app.get("/", async (req, res) => {
-    res.send("Welcome!")
+    res.render("index.ejs")
 });
 
 //GET weapon/new route
