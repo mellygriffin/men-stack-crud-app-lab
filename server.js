@@ -64,7 +64,13 @@ app.delete("/weapons/:weaponId", async (req, res) => {
     res.redirect("/weapons");
 });
 
-
+//GET edit route
+app.get("/weapons/:weaponId/edit", async (req, res) => {
+    const foundWeapon = await Weapon.findById(req.params.weaponId);
+    res.render("weapons/edit.ejs", {
+        weapon: foundWeapon,
+    });
+});
 
 
 app.listen(3000, () => {

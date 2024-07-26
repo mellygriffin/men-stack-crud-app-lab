@@ -17,7 +17,7 @@
 <form action="/weapons/<%=weapon._id%>?_method=DELETE" method="POST">
     <button type="submit">Delete <%= weapon.name %></button>
 </form>
-
+<a href="/weapons/<%= weapon._id %>/edit">Edit <%= weapon.name %></a>
 <a href="/weapons/">Back to Weapons</a>
 </body>
 </html>
