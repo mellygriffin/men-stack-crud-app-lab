@@ -72,6 +72,17 @@ app.get("/weapons/:weaponId/edit", async (req, res) => {
     });
 });
 
+//PUT update route
+app.put("/weapons/:weaponId", async (req, res) => {
+    if (req.body.isEquipped === "on") {
+        req.body.isEquipped = true;
+    } else {
+        req.body.isEquipped = false;
+    }
+    await Weapon.findByIdAndUpdate(req.params.weaponId, req.body);
+    res.redirect(`/weapons/${req.params.weaponId}`);
+});
+
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
