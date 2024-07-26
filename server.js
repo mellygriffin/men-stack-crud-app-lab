@@ -7,6 +7,7 @@ const app = express();
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
+const path = require("path");
 
 
 //Connect to mongoose
@@ -23,6 +24,8 @@ const Weapon = require("./models/weapon.js")
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+
+app.use(express.static(path.join(__dirname, "public")));
 
 //GET landing page
 app.get("/", async (req, res) => {
