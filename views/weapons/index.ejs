@@ -9,7 +9,9 @@
     <h1>Welcome to the Inventory!</h1>
     <ul>
         <% weapons.forEach(weapon => { %>
-            <li><%= weapon.name %></li>
+            <li>
+                <a href="/weapons/<%= weapon._id %>"><%= weapon.name %></a>
+            </li>
         <% }); %>
     </ul>
 

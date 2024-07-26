@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= weapon.name %></title>
+</head>
+<body>
+
+    <h1><%= weapon.name %></h1>
+    <p><%= weapon.description %></p>
+    <% if (weapon.isEquipped) { %>
+    <p>This weapon is equipped!</p>
+<% } else { %>
+<p>You haven't equipped this weapon...</p>
+<% } %>
+<a href="/weapons/">Back to Weapons</a>
+</body>
+</html>

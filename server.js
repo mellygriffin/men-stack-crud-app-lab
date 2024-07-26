@@ -29,6 +29,12 @@ app.get("/weapons/new", async (req, res) => {
     res.render("weapons/new.ejs");
 });
 
+//GET show route
+app.get("/weapons/:weaponId", async (req, res) => {
+    const foundWeapon = await Weapon.findById(req.params.weaponId)
+    res.render("weapons/show.ejs", { weapon: foundWeapon });
+})
+
 //GET /weapons index page
 app.get("/weapons/", async (req, res) => {
     const allWeapons = await Weapon.find();
@@ -44,8 +50,10 @@ app.post("/weapons/", async (req, res) => {
         req.body.isEquipped = false;
     }
     await Weapon.create(req.body);
-    res.redirect("/weapons/");
+    res.redirect("/weapons");
 });
+
+
 
 
 app.listen(3000, () => {
