@@ -121,7 +121,7 @@ button:active {
 }
 
 .delete-button {
-    background-color:red;
+    background-color:rgb(78, 17, 17);
     text-transform: uppercase;
     padding: 40px 15px;
     width: 70%;
@@ -132,22 +132,18 @@ button:active {
 
 .edit-link {
     text-decoration: none;
+    color: white;
 }
 
 .edit-text {
-    background-color:rgb(64, 61, 61);
+    background-color:rgb(54, 61, 89);
     text-transform: uppercase;
     padding: 40px 15px;
     font-size: 1.3em;
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: center
-    /* color: white;
-    font-weight: bold;
-    text-align: center;
-    width: 70%;
-    height: 50px; */
+    align-items: center;
 }
 
 .delete-button:hover {
@@ -164,4 +160,65 @@ button:active {
 
 .edit-text:active {
     background-color: rgb(136, 129, 129);
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+}
+
+.weapon-cards {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(254, 254, 254);
+    width: 40px;
+    height: 70px;
+    background-color: rgb(79, 83, 134);
+    margin: 10px 15px;
+    padding: 30px 50px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px solid rgb(79, 83, 134);
+}
+
+.weapon-cards:hover {
+    border: 4px solid rgb(60, 64, 120);
+}
+
+.weapon-cards:active {
+    background-color: rgb(60, 64, 120);
+    border: 2.5px solid rgb(60, 64, 120);
+    color: gray;
+}
+
+.index-header-div {
+    display: flex;
+    flex-direction: row;
+    justify-self: space-between;
+    align-items: center;
+    width: 98%;
+}
+
+.add-weapon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px;
+    text-decoration: none;
+    width: 6em;
+    text-decoration: uppercase;
+    background-color:rgb(36, 34, 34);
+    border-radius: 30px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
 }

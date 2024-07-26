@@ -11,12 +11,12 @@
     <ul>
         <% weapons.forEach(weapon => { %>
             <li>
-                <a href="/weapons/<%= weapon._id %>"><%= weapon.name %></a>
+                <a class="weapon-cards" href="/weapons/<%= weapon._id %>"><%= weapon.name %></a>
             </li>
         <% }); %>
     </ul>
 
-    <a href="/weapons/new">Add New Weapon</a>
+    <a class="add-weapon" href="/weapons/new">Add New Weapon</a>
 
 </body>
 </html>

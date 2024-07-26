@@ -17,10 +17,12 @@
 <% } %>
 </div>
 <div class="weapon-actions">
-<form action="/weapons/<%=weapon._id%>?_method=DELETE" method="POST">
-    <button type="submit">Delete <%= weapon.name %></button>
+<form class="delete-form" action="/weapons/<%=weapon._id%>?_method=DELETE" method="POST">
+    <button class="delete-button" type="submit">Delete <%= weapon.name %></button>
 </form>
-<a href="/weapons/<%= weapon._id %>/edit">Edit <%= weapon.name %></a>
+<a class="edit-link" href="/weapons/<%= weapon._id %>/edit">
+    <div class="edit-text">Edit <%= weapon.name %></div>
+    </a>
 </div>
 <a class="index-link-text" href="/weapons/">Back to Weapons</a>
 </body>
