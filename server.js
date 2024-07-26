@@ -2,9 +2,12 @@
 const dotenv = require("dotenv");
 dotenv.config();//loads things from .env
 const express = require("express");
-const mongoose = require("mongoose");
 
 const app = express();
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const morgan = require("morgan");
+
 
 //Connect to mongoose
 mongoose.connect(process.env.MONGODB_URI);
@@ -16,7 +19,10 @@ mongoose.connection.on("connected", () => {
 //Import Weapon model
 const Weapon = require("./models/weapon.js")
 
+//middleware
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 //GET landing page
 app.get("/", async (req, res) => {
@@ -38,7 +44,6 @@ app.get("/weapons/:weaponId", async (req, res) => {
 //GET /weapons index page
 app.get("/weapons/", async (req, res) => {
     const allWeapons = await Weapon.find();
-    console.log(allWeapons);
     res.render('weapons/index.ejs', { weapons: allWeapons })
 });
 
@@ -50,6 +55,12 @@ app.post("/weapons/", async (req, res) => {
         req.body.isEquipped = false;
     }
     await Weapon.create(req.body);
+    res.redirect("/weapons");
+});
+
+//POST delete route
+app.delete("/weapons/:weaponId", async (req, res) => {
+    await Weapon.findByIdAndDelete(req.params.weaponId);
     res.redirect("/weapons");
 });
 
