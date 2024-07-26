@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
 <body>
@@ -15,12 +16,14 @@
         <label for="description">Description:</label>
         <input type="description" name="description" value="<%= weapon.description %>" />
 
+        <div class="checkbox-div">
         <label for="isEquipped">Is it Equipped?</label>
         <input type="checkbox" name="isEquipped" <% if (weapon.isEquipped) { %>checked<% } %>>
+        </div>
 
         <button type="submit">Update Weapon</button>
     </form>
- <a href="/weapons/">Back to Weapons</a>
+ <a class="index-link-text" href="/weapons/">Back to Weapons</a>
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Log a New Weapon</title>
 </head>
 <body>
@@ -15,12 +16,14 @@
         <label for="description">Description:</label>
         <input type="description" name="description" id="description" />
 
+        <div class="checkbox-div">
         <label for="isEquipped">Is it Equipped?</label>
         <input type="checkbox" name="isEquipped" id="isEquipped" />
+        </div>
 
         <button type="submit">Add Weapon</button>
 
     </form>
- <a href="/weapons/">Back to Weapons</a>
+ <a class="index-link-text" href="/weapons/">Back to Weapons</a>
 </body>
 </html>

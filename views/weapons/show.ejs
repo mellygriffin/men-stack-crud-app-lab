@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= weapon.name %></title>
 </head>
 <body>
-
+<div class="weapon-details">
     <h1><%= weapon.name %></h1>
     <p><%= weapon.description %></p>
     <% if (weapon.isEquipped) { %>
@@ -14,10 +15,13 @@
 <% } else { %>
 <p>You haven't equipped this weapon...</p>
 <% } %>
+</div>
+<div class="weapon-actions">
 <form action="/weapons/<%=weapon._id%>?_method=DELETE" method="POST">
     <button type="submit">Delete <%= weapon.name %></button>
 </form>
 <a href="/weapons/<%= weapon._id %>/edit">Edit <%= weapon.name %></a>
-<a href="/weapons/">Back to Weapons</a>
+</div>
+<a class="index-link-text" href="/weapons/">Back to Weapons</a>
 </body>
 </html>
