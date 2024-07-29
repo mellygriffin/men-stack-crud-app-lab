@@ -11,7 +11,10 @@
     <ul>
         <% weapons.forEach(weapon => { %>
             <li>
-                <a class="weapon-cards" href="/weapons/<%= weapon._id %>"><%= weapon.name %></a>
+                <!-- <a class="weapon-cards" href="/weapons/<%= weapon._id %>"><%= weapon.name %></a> -->
+                <a class="weapon-cards" href="/weapons/<%=weapon._id %>">
+                    <%=weapon.name %><%=weapon.name.toLowerCase().includes('sword')?'🗡️':weapon.name.toLowerCase().includes('bow')?'🏹':'🛡️'%>
+                </a>
             </li>
         <% }); %>
     </ul>
